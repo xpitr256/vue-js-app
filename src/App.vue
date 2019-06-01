@@ -1,14 +1,15 @@
 <template>
   <div id="app">
-
-<!--
-    <menu-bar></menu-bar>
--->
-
-    <ul>
+    <b-nav tabs fill type="dark" variant="dark">
+        <b-nav-item active><router-link to="/">HOME</router-link></b-nav-item>
+        <b-nav-item>ANALITIC LINKER</b-nav-item>
+        <b-nav-item>DESIGNER LINKER</b-nav-item>
+        <b-nav-item><router-link to="/results">VER RESULTADOS</router-link></b-nav-item>
+      </b-nav>
+     <!--  <ul>
       <li><router-link to="/">HOME</router-link></li>
       <li><router-link to="/results">VER RESULTADOS</router-link></li>
-    </ul>
+    </ul>-->
 
     <img src="./assets/logo.png">
 
