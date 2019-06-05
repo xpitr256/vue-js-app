@@ -1,29 +1,21 @@
 <template>
-  <div id="app">
+  <div id="app" class="bgimg">
+
     <b-nav tabs fill type="dark" variant="dark">
         <b-nav-item active><router-link to="/">HOME</router-link></b-nav-item>
         <b-nav-item>ANALITIC LINKER</b-nav-item>
         <b-nav-item>DESIGNER LINKER</b-nav-item>
         <b-nav-item><router-link to="/results">VER RESULTADOS</router-link></b-nav-item>
       </b-nav>
-     <!--  <ul>
-      <li><router-link to="/">HOME</router-link></li>
-      <li><router-link to="/results">VER RESULTADOS</router-link></li>
-    </ul>-->
 
-    <img src="./assets/logo.png">
+       <h2 class="title">{{appName}}</h2>
+       <div v-if="show">
+         <p v-for="user in users" :key="user.id">
+           {{user.name}}
+         </p>
+       </div>
+       <router-view/>
 
-    <h2 class="title">{{appName}}</h2>
-
-    <div v-if="show">
-      <p v-for="user in users" :key="user.id">
-        {{user.name}}
-      </p>
-    </div>
-    <router-view/>
-<!--
-    <footer></footer>
--->
   </div>
 </template>
 
@@ -52,4 +44,12 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+</style>
+
+<style type="text/css">
+  .bgimg {
+    background-image: url('./images/back.png');
+    height: 786px;
+    width: 1320px;
+  }
 </style>
