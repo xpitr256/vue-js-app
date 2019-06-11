@@ -6,6 +6,8 @@
         <b-nav-item>ANALITIC LINKER</b-nav-item>
         <b-nav-item>DESIGNER LINKER</b-nav-item>
         <b-nav-item><router-link to="/results">VER RESULTADOS</router-link></b-nav-item>
+        <b-nav-item v-on:click="showInEnglish">Show in english</b-nav-item>
+        <b-nav-item v-on:click="showInSpanish">Mostrar en español</b-nav-item>
       </b-nav>
 
        <h2 class="title">{{appName}}</h2>
@@ -30,6 +32,18 @@ export default {
         {id: 1, name: 'Pablo'},
         {id: 2, name: 'Coco'}
       ]
+    }
+  },
+  methods: {
+    showInEnglish: function () {
+      this.$i18n.locale = 'en'
+    },
+    showInSpanish: function () {
+      import('@/lang/es.json')
+        .then((msgs) => {
+          this.$i18n.setLocaleMessage('es', msgs.defaults || msgs)
+          this.$i18n.locale = 'es'
+        })
     }
   }
 }
